@@ -21,8 +21,14 @@ public class TestCases
     }
 
     @Test
-    public void twoNumbers(){
+    public void twoNumbers()
+    {
         assertEquals(3, StringCalculator.add("1,2"));
+    }
+
+    @Test
+    public void threeNumbers(){
+        assertEquals(6, StringCalculator.add("1,2,3"));
     }
 
 }
