@@ -9,7 +9,15 @@ public class TestCases
         System.out.println("Starting the code and Test Cases");
     }
     @Test
-    public void testEmptyString() {
+    public void testEmptyString()
+    {
         assertEquals(0, StringCalculator.add(""));
     }
+
+    @Test
+    public void oneNumber()
+    {
+        assertEquals(1, StringCalculator.add("1"));
+    }
+
 }

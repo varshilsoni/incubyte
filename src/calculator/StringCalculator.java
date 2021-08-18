@@ -4,6 +4,16 @@ public class StringCalculator
 {
     public static int add(String number)
     {
-        return 0;
+        if(number.equals(""))
+        {
+            return 0;
+        }
+        else
+            return toInt(number);
+    }
+
+    private static int toInt(String number)
+    {
+        return Integer.parseInt(number);
     }
 }
