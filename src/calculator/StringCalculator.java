@@ -9,11 +9,27 @@ public class StringCalculator
             return 0;
         }
         else
-            return toInt(number);
+        {
+            String numList[] = splitNumbers(number, ",");
+            return sum(numList);
+        }
     }
-
     private static int toInt(String number)
     {
         return Integer.parseInt(number);
     }
+    private static String[] splitNumbers(String numbers, String split)
+    {
+        return numbers.split(split);
+    }
+        private static int sum(String[] numbers)
+        {
+        int total = 0;
+        for(String number : numbers){
+            total += toInt(number);
+        }
+        return total;
+    }
+
+
 }
