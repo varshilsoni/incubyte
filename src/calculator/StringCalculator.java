@@ -10,7 +10,14 @@ public class StringCalculator
         }
         else
         {
-            String numList[] = splitNumbers(number, ",|\n");
+            String input = ",";
+            if(number.matches("//(.*)\n(.*)"))
+            {
+                input = Character.toString(number.charAt(2));
+                number = number.substring(3);
+            }
+
+            String numList[] = splitNumbers(number, input + "|\n");
             return sum(numList);
         }
     }
