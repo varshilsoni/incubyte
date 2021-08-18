@@ -10,7 +10,7 @@ public class StringCalculator
         }
         else
         {
-            String numList[] = splitNumbers(number, ",");
+            String numList[] = splitNumbers(number, ",|\n");
             return sum(numList);
         }
     }
