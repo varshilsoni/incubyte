@@ -71,5 +71,11 @@ public class TestCases
             assertEquals(e.getMessage(), "Negatives not allowed: -3,-5");
         }
     }
+
+    @Test
+    public void overThousand()
+    {
+        assertEquals(2, StringCalculator.add("1000,2"));
+    }
 }
 

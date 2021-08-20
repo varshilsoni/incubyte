@@ -42,7 +42,8 @@ public class StringCalculator
                 else
                     negString += ("," + number);
             }
-            total += toInt(number);
+            if(toInt(number) < 1000)
+                total += toInt(number);
         }
             if(!negString.equals(""))
             {
