@@ -10,14 +10,13 @@ public class StringCalculator
         }
         else
         {
-            String input = ",";
-            if(number.matches("//(.*)\n(.*)"))
-            {
-                input = Character.toString(number.charAt(2));
-                number = number.substring(3);
+            String delimiter = ",";
+            if(number.matches("//(.*)\n(.*)")){
+                delimiter = Character.toString(number.charAt(2));
+                number = number.substring(4);
             }
 
-            String numList[] = splitNumbers(number, input + "|\n");
+            String numList[] = splitNumbers(number, delimiter + "|\n");
             return sum(numList);
         }
     }
@@ -32,11 +31,24 @@ public class StringCalculator
         private static int sum(String[] numbers)
         {
         int total = 0;
-        for(String number : numbers){
+        String negString = "";
+
+        for(String number : numbers)
+        {
+            if(toInt(number) < 0)
+            {
+                if(negString.equals(""))
+                    negString = number;
+                else
+                    negString += ("," + number);
+            }
             total += toInt(number);
         }
+            if(!negString.equals(""))
+            {
+                throw
+                        new IllegalArgumentException("Negatives not allowed: " + negString);
+            }
         return total;
     }
-
-
 }
